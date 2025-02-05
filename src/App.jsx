@@ -16,7 +16,7 @@ export const goods = [
 ];
 
 export const App = () => {
-  const [selected, setSelected] = useState(goods[8]);
+  const [selected, setSelected] = useState('Jam');
 
   const toggleSelection = good => {
     setSelected(selected === good ? '' : good);
@@ -50,6 +50,7 @@ export const App = () => {
               className={
                 selected === good ? 'has-background-success-light' : ''
               }
+              key={good}
             >
               <td>
                 {selected === good ? (
@@ -57,7 +58,7 @@ export const App = () => {
                     data-cy="RemoveButton"
                     type="button"
                     className="button is-info"
-                    onClick={() => toggleSelection('')}
+                    onClick={() => toggleSelection(good)}
                   >
                     -
                   </button>
